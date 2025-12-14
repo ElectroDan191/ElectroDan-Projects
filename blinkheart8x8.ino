@@ -1,6 +1,4 @@
-// 2-dimensional array of row pin numbers:
 int R[] = {2,7,A5,5,13,A4,12,A2};  
-// 2-dimensional array of column pin numbers:
 int C[] = {6,11,10,3,A3,4,8,9};    
   
 unsigned char D[8][8] =       
@@ -27,7 +25,7 @@ unsigned char A[8][8] =
   
 };  
   
-unsigned char N[8][8] =      //the small "heart" 
+unsigned char N[8][8] =    
 {  
   1,1,0,0,0,0,1,1,	
   1,1,1,0,0,0,1,1,
@@ -88,9 +86,7 @@ unsigned char E[8][8] =
 
 void setup()  
 {  
-   // iterate over the pins:
   for(int i = 0;i<8;i++)  
-  // initialize the output pins:
   {  
     pinMode(R[i],OUTPUT);  
     pinMode(C[i],OUTPUT);  
@@ -99,33 +95,33 @@ void setup()
   
 void loop()  
 {  
-  for(int i = 0 ; i < 100 ; i++)        //Loop display 100 times 
+  for(int i = 0 ; i < 100 ; i++)        
   {  
-    Display(D);                   //Display the "Big Heart"  
+    Display(D);                   
   }  
-  for(int i = 0 ; i < 100 ; i++)         //Loop display 50 times
+  for(int i = 0 ; i < 100 ; i++)        
   {     
-    Display(A);                 //Display the "small Heart" 
+    Display(A);              
   }
-   for(int i = 0 ; i < 100 ; i++)        //Loop display 100 times 
+   for(int i = 0 ; i < 100 ; i++)       
   {  
-    Display(N);                   //Display the "Big Heart"  
+    Display(N);                  
   }  
-   for(int i = 0 ; i < 100 ; i++)        //Loop display 100 times 
+   for(int i = 0 ; i < 100 ; i++)        
   {  
-    Display(I);                   //Display the "Big Heart"  
+    Display(I);                   
   }  
-   for(int i = 0 ; i < 100 ; i++)        //Loop display 100 times 
+   for(int i = 0 ; i < 100 ; i++)        
   {  
-    Display(E);                   //Display the "Big Heart"  
+    Display(E);                   
   }  
-   for(int i = 0 ; i < 150 ; i++)        //Loop display 100 times 
+   for(int i = 0 ; i < 150 ; i++)         
   {  
-    Display(L);                   //Display the "Big Heart"  
+    Display(L);                
   }    
-   for(int i = 0 ; i < 150 ; i++)        //Loop display 100 times 
+   for(int i = 0 ; i < 150 ; i++)        
   {  
-    Display(O);                   //Display the "Big Heart"  
+    Display(O);                     
   }    
 }  
   
@@ -133,18 +129,18 @@ void Display(unsigned char dat[8][8])
 {  
   for(int c = 0; c<8;c++)  
   {  
-    digitalWrite(C[c],LOW);//use thr column 
-    //loop
+    digitalWrite(C[c],LOW); 
+    
     for(int r = 0;r<8;r++)  
     {  
       digitalWrite(R[r],dat[r][c]);  
     }  
     delay(1);  
-    Clear();  //Remove empty display light
+    Clear(); 
   }  
 }  
   
-void Clear()                          //清空显示  
+void Clear()                       
 {  
   for(int i = 0;i<8;i++)  
   {  
